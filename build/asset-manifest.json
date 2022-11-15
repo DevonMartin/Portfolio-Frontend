@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3aa85d0c.css",
+    "main.js": "/static/js/main.2b3ce8ff.js",
+    "static/media/logo.png": "/static/media/logo.a399a8cd9f9a411614a4.png",
+    "static/media/resume.png": "/static/media/resume.72e7d72f4fed1d0cd28f.png",
+    "static/media/Gitlet.png": "/static/media/Gitlet.3d4ccff9c955ee7bd6c0.png",
+    "static/media/RuneScape In C.png": "/static/media/RuneScape In C.de7198952de736e1e717.png",
+    "static/media/resume.pdf": "/static/media/resume.644cd0cdfc9a991af35d.pdf",
+    "index.html": "/index.html",
+    "main.3aa85d0c.css.map": "/static/css/main.3aa85d0c.css.map",
+    "main.2b3ce8ff.js.map": "/static/js/main.2b3ce8ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3aa85d0c.css",
+    "static/js/main.2b3ce8ff.js"
+  ]
+}

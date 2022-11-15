@@ -1,0 +1,227 @@
+nav {
+  background-color: var(--bg);
+  box-shadow: 0 1px 9px black;
+  font-family: "Nobile", sans-serif;
+  height: var(--nav-size);
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+nav > * {
+  height: 100%;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.desktop-navbar-list {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.desktop-navbar-list > li {
+  font-size: 14pt;
+  padding: 0 15px;
+  width: fit-content;
+}
+
+.desktop-navbar-list > li:first-child {
+  text-align: end;
+}
+
+.desktop-navbar-list > li:nth-child(2) {
+  text-align: center;
+}
+
+.desktop-navbar-list > li:nth-child(3) {
+  text-align: start;
+}
+
+.desktop-navbar-list > li:last-child {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.desktop-navbar-list > li a {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.desktop-navbar-list > li > a:not(:last-child):hover {
+  filter: brightness(1.5);
+}
+
+.desktop-navbar-list > li > a:last-child:hover {
+  filter: brightness(1.2);
+}
+
+.active-button {
+  color: var(--secondary-color) !important;
+}
+
+@media screen and (min-width: 651px) {
+  .active-button {
+    border-bottom: 2px solid var(--secondary-color);
+  }
+}
+
+.mobile-toggler {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+}
+
+.mobile-dropdown {
+  background-color: var(--bg);
+  box-shadow: 0 10px 10px -9px black;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  transition: height var(--navbar-speed) ease;
+  width: 100vw;
+}
+
+.mobile-dropdown.open {
+  height: 400px;
+}
+
+nav hr {
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  height: 2px;
+  max-width: 200px;
+  width: 40vw;
+}
+
+.resume {
+  background-color: var(--secondary-color);
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 2px 0 rgb(12 12 33 / 66%);
+  border-radius: 25px;
+  color: black;
+  cursor: pointer;
+  font-size: 12pt;
+  padding: 5px 15px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 650px) {
+  .resume {
+    color: var(--secondary-font-color);
+    font-size: 25pt;
+    position: relative;
+    top: 30px;
+  }
+}
+
+.mobile-nav {
+  background: transparent;
+  border: none;
+  color: var(--bg-text-color);
+  font-size: 25pt;
+  font-weight: 600;
+  line-height: 75px;
+  text-decoration: none;
+}
+
+.desktop-nav {
+  color: var(--bg-text-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* 
+    Header Hamburger Switch 
+    https://mdbootstrap.com/docs/standard/extended/hamburger-menu/ 
+*/
+
+.animated-icon {
+  width: 30px;
+  height: 100%;
+  margin-left: 15px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.animated-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.animated-icon span {
+  background: var(--bg-text-color);
+}
+
+.animated-icon span:nth-child(1) {
+  top: 18px;
+}
+
+.animated-icon span:nth-child(2) {
+  top: 28px;
+}
+
+.animated-icon span:nth-child(3) {
+  top: 38px;
+}
+
+.animated-icon.open span:nth-child(1) {
+  top: 29px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.animated-icon.open span:nth-child(2) {
+  opacity: 0;
+  left: 60px;
+}
+
+.animated-icon.open span:nth-child(3) {
+  top: 29px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.slow-down {
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}

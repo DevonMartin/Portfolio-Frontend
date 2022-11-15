@@ -1,0 +1,166 @@
+.contact-page-container {
+  background-color: var(--secondary-color);
+  color: #eee;
+  height: fit-content;
+  min-height: calc(100vh - var(--nav-size) - var(--footer-size));
+  text-align: center;
+  width: 100%;
+  text-shadow: 1px 1px 2px black;
+}
+
+.contact-page-head * {
+  margin: auto;
+  max-width: 850px;
+}
+
+.contact-page-head {
+  padding: 65px 5% 35px;
+}
+
+.contact-page-head h1 {
+  padding-top: 25px;
+}
+
+.contact-page-head p {
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+.email-container * {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 1000px) {
+  .contact-page-head p {
+    font-size: 24px;
+  }
+  .email-container * {
+    font-size: 20px;
+  }
+}
+
+.contact-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0 5% 85px;
+  width: 90%;
+}
+
+.email-container {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 6px 24px 0 rgb(12 12 33 / 66%);
+  margin-top: 35px;
+  max-width: 520px;
+  padding: 25px;
+  width: fit-content;
+}
+
+.email-container input {
+  color: rgba(82, 89, 100, 0.64);
+  font-family: monospace;
+}
+
+.email-container textarea {
+  color: #525964;
+}
+
+.email-container input,
+.email-container textarea {
+  background-color: rgba(250, 250, 250, 0.6);
+  border: 1px solid #e5ecf2;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 10px 15px;
+  max-width: min(450px, calc(100vw - 115px));
+  width: 100vw;
+}
+
+.email-container button {
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  border-radius: 25px;
+  box-shadow: 0 1px 2px 0 rgb(12 12 33 / 66%);
+  color: #fff;
+  cursor: pointer;
+  float: right;
+  padding: 5px 15px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.email-container button:hover {
+  filter: brightness(1.1);
+}
+
+.email-container div {
+  width: fit-content;
+}
+
+.email-sent {
+  background-color: rgba(99, 210, 149, 0.797);
+  border: 1px solid green;
+  border-radius: 5px;
+  color: rgb(40, 40, 40);
+  font-size: 15pt;
+  padding: 5px 15px;
+  position: relative;
+  text-shadow: none;
+  animation: fadeout 3s 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.social-media-container {
+  margin: 35px 35px 75px;
+  width: fit-content;
+}
+
+.social-media-container p {
+  margin-top: 0;
+  text-align: center;
+}
+
+.social-media {
+  width: 100%;
+}
+
+.social-media > a {
+  color: inherit;
+  cursor: default;
+  margin: 0 10px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.social-media svg {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+.social-media svg:hover {
+  transform: scale(1.2);
+}
+
+.grecaptcha-badge {
+  bottom: 23px !important;
+  z-index: 4;
+}

@@ -1,0 +1,34 @@
+.resume-pdf {
+  height: calc(100vh - var(--nav-size) - var(--footer-size));
+  object-fit: cover;
+  width: 100%;
+}
+
+.resume-pdf > img {
+    border: 2px solid black;
+    border-radius: 8px;
+    display: block;
+    margin: 25px auto 0;
+    width: 90%;
+}
+
+.resume-dl {
+    margin: 25px 0 75px;
+    text-align: center;
+    width: 100vw;
+}
+
+.resume-dl > button {
+    background-color: var(--bg);
+    border: 1px solid #eee;
+    border-radius: 25px;
+    box-shadow: 0 2px 8px 0 rgb(12 12 33 / 66%);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 5px 15px;
+}
+
+.resume-dl > button:hover {
+    background-color: var(--bg-accent);
+}

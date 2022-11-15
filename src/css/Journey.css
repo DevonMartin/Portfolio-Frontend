@@ -1,0 +1,155 @@
+.journey-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.journey-wrapper > div {
+  width: max(40%, 800px);
+  margin: 25px;
+  max-width: 800px;
+}
+
+.journey-wrapper > *:first-child {
+  flex: 100%;
+}
+
+.journey-wrapper > div:nth-child(2) {
+  flex: 30%;
+  max-width: min(80vw, 600px);
+}
+
+.courses-wrapper {
+  align-items: start;
+  background-color: rgb(178, 178, 178);
+  border: 1px solid white;
+  border-radius: 25px;
+  box-shadow: 1px 1px 8px black;
+  color: var(--secondary-color);
+  max-width: 70vw;
+  margin-bottom: 85px !important;
+  padding: 0 45px 85px;
+}
+
+.courses-wrapper h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  padding-top: 50px;
+  text-shadow: 1px 1px rgb(186, 123, 149);
+  text-transform: uppercase;
+}
+
+.course-display-wrapper {
+  height: 365px;
+  position: relative;
+}
+
+.course-bg,
+.course-fg {
+  border: solid var(--bg);
+  height: 260px;
+  position: absolute;
+  width: 90%;
+}
+
+.course-bg {
+  background-color: white;
+  border-width: 1px;
+  top: 95px;
+}
+
+.course-fg {
+  border-width: 4px;
+  box-shadow: 1px 1px 8px -1px black;
+  color: black;
+  left: 30px;
+  overflow-y: auto;
+  top: 115px;
+}
+
+.course {
+  margin: 15px;
+  max-width: 95%;
+}
+
+.course-header {
+font-family: 'Oswald', sans-serif;
+font-size: 1.3rem;
+font-weight: bold;
+}
+
+.course-body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 650px) {
+  .journey-wrapper > div:nth-child(2) {
+    max-width: 90vw;
+  }
+
+  .courses-wrapper {
+    border-radius: 0;
+    border-right: none;
+    margin: 0 !important;
+    max-width: 100vw;
+    overflow: hidden;
+    width: 100vw;
+  }
+
+  .courses-wrapper h1 {
+    font-size: 1.1rem;
+    left: -26px;
+    position: absolute;
+  }
+
+  .course-display-wrapper {
+    height: 345px;
+    width: 100%;
+  }
+
+  .course-bg,
+  .course-fg {
+    height: 240px;
+    padding-right: 100px;
+    width: 96%;
+  }
+
+  .course-bg {
+    left: -26px;
+  }
+
+  .course-fg {
+    border-width: 2px;
+    left: -6px;
+    margin: 0;
+    padding: 0 55px 0 25px;
+  }
+
+  .course {
+    margin: 15px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .course-bg,
+  .course-fg {
+    width: 100%;
+  }
+}
+
+.course-fg.green {
+  background-color: #88c45e;
+}
+
+.course-fg.yellow {
+  background-color: #fef49c;
+}
+
+.course-fg.red {
+  background-color: #d46d6c;
+}
+
+/* 186, 123 149 */

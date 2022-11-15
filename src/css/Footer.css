@@ -1,0 +1,29 @@
+.footer {
+  align-items: center;
+  background-color: black;
+  bottom: 0;
+  color: #4f4f4f;
+  display: flex;
+  height: var(--footer-size);
+  justify-content: center;
+  position: fixed;
+  vertical-align: middle;
+  width: 100vw;
+  z-index: 3;
+}
+
+.footer > span:first-child {
+  color:rgb(200, 200, 200);
+  margin: 0 5px;
+}
+
+.footer > span:nth-child(2) {
+  color: var(--secondary-color);
+  font-size: smaller;
+}
+
+@media screen and (max-width: 350px) {
+  .footer {
+    font-size:smaller;
+  }
+}

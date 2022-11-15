@@ -1,0 +1,458 @@
+.welcome {
+  min-height: calc(100vh - var(--footer-size));
+  text-align: center;
+  width: 100vw;
+}
+
+.index-button {
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  box-shadow: 0 1px 2px 0 rgb(12 12 33 / 66%);
+  cursor: pointer;
+  font-size: x-large;
+  padding: 5px 15px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+@media screen and (min-width: 651px) {
+  .index-button:hover {
+    filter: brightness(1.2);
+  }
+}
+
+.index-button-wrapper {
+  padding: 35px;
+}
+
+.index-odd {
+  background-color: rgb(250, 250, 250);
+}
+
+.index-even {
+  background-color: rgba(240, 240, 240);
+  color: var(--bg-text-color);
+}
+
+.index-even .index-button,
+.index-even .index-button:hover {
+  background-color: var(--secondary-color) !important;
+  color: var(--secondary-font-color);
+}
+
+.index-odd .index-button,
+.index-odd .index-button:hover {
+  background-color: var(--bg-accent);
+  color: rgb(50, 50, 50);
+}
+
+.initial-pic {
+    max-width: 250px;
+}
+
+@media screen and (max-width: 650px) {
+  .initial-pic {
+    width: 75%;
+  }
+}
+
+.initial-intro {
+  padding: 0 25px 15vh 25px;
+  transition: 2s;
+}
+
+.about-me-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: auto;
+  max-width: 1400px;
+}
+
+.about-me-content:not(:first-child) {
+  align-items: center;
+}
+
+.p-wrapper {
+  max-width: 600px;
+  min-width: 285px;
+  padding: 0 5%;
+  width: max(50%, 800px);
+  min-height: 500px;
+}
+
+@media screen and (min-width: 651px) {
+  .p-wrapper {
+    line-height: 1.3;
+    margin: 15px;
+  }
+}
+
+.circle-section-wrapper {
+  width: 100%;
+}
+
+.circle-wrapper {
+  margin: auto;
+  width: fit-content;
+}
+
+.circle-text {
+  font-family: optima;
+  font-size: 10pt;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.circle {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 10px;
+  margin: 5px 28px 5px 2px;
+  width: 10px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.circle:hover {
+  transform: scale(1.5);
+}
+
+.circle.active {
+  background-color: gray;
+  border-color: black;
+  cursor: default;
+}
+
+.circle.active:hover {
+  transform: none;
+}
+
+.bio {
+  font-family: monospace;
+  font-size: 14pt;
+}
+
+.tweet-wrapper {
+  flex-grow: 1;
+  margin: 0 35px;
+}
+
+.twitter-tweet,
+.twitter-tweet * {
+  margin: auto !important;
+  max-width: min(90vw, 400px);
+}
+
+/* ----------- End Index 1 ----------- */
+/* ----------- Index 2 ----------- */
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 35px 25px 150px;
+}
+
+.gallery > div {
+  border: 1px solid black;
+  max-width: min(90vw, 400px);
+  position: relative;
+  -webkit-transition: background var(--proj-speed);
+  -moz-transition: background var(--proj-speed);
+  -o-transition: background var(--proj-speed);
+  transition: background var(--proj-speed);
+}
+
+@media screen and (max-width: 852px) {
+  .gallery > div:not(:last-child) {
+    border-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 853px) {
+  .gallery > div:nth-child(even) {
+    border-left: 0;
+  }
+}
+
+.gallery > div > img {
+  height: 100%;
+  width: 100%;
+}
+
+.gallery > div > div {
+  background-color: black;
+  position: absolute;
+  height: 100%;
+  opacity: 0;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  -webkit-transition: all var(--proj-speed);
+  -moz-transition: all var(--proj-speed);
+  -o-transition: all var(--proj-speed);
+  transition: all var(--proj-speed);
+}
+
+.gallery > div > div > h3 {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+  margin-bottom: 0 !important;
+}
+
+.gallery > div > div > h4 {
+  color: white;
+  font-size: 1.3rem;
+  margin-top: 5px;
+}
+
+.project-button {
+  margin-top: 50%;
+}
+
+@media screen and (max-width: 375px) {
+  .proj-btn-wrapper {
+    height: 175px;
+  }
+}
+
+.visible {
+  opacity: 1 !important;
+}
+
+
+.slider {
+  -webkit-transition: all var(--proj-speed);
+  -moz-transition: all var(--proj-speed);
+  -o-transition: all var(--proj-speed);
+  transition: all var(--proj-speed);
+}
+
+.slide-down {
+  transform: translateY(125%);
+}
+
+.slide-up {
+  transform: translateY(-25%);
+}
+
+#dark {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+  -webkit-transition: opacity var(--proj-speed);
+  -moz-transition: opacity var(--proj-speed);
+  -o-transition: opacity var(--proj-speed);
+  transition: opacity var(--proj-speed);
+}
+
+#dark.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.visible {
+  opacity: 1 !important;
+}
+
+.open-project {
+  background-color: white;
+  border-radius: 25px;
+  height: 80%;
+  left: 50%;
+  max-height: 700px;
+  max-width: min(400px, 45vh);
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  box-shadow: 0 2px 8px -2px rgb(0, 0, 0);
+  -webkit-box-shadow: 0 2px 8px -2px rgb(0, 0, 0);
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 80%;
+  z-index: 4;
+  -webkit-transition: all var(--proj-speed);
+  -moz-transition: all var(--proj-speed);
+  -o-transition: all var(--proj-speed);
+  transition: all var(--proj-speed);
+}
+
+.open-project.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.open-project-container {
+  height: 100%;
+  white-space: nowrap;
+  width:100%;
+}
+
+.open-project-container > img {
+  border-bottom: 1px solid #444;
+  vertical-align: top;
+  left: -100%;
+  position: relative;
+  width: 100%;
+}
+
+.open-project-container > img.slid {
+  -webkit-transition: all var(--img-speed);
+  -moz-transition: all var(--img-speed);
+  -o-transition: all var(--img-speed);
+  transition: all var(--img-speed);
+}
+
+.open-project-container > button {
+  background: url('https://api.iconify.design/akar-icons/arrow-left.svg?color=%23444') no-repeat center center / contain;
+  border: 1px solid #444;
+  bottom: 45px;
+  float: left;
+  height: 45px;
+  cursor: pointer;
+  position: relative;
+  width: 45px;
+}
+
+.open-project-container > button#right {
+  background-image: url('https://api.iconify.design/akar-icons/arrow-right.svg?color=%23444');
+  float: right;
+}
+
+.slide-right {
+  transform: translateX(-100%);
+}
+
+.slide-left {
+  transform: translateX(100%);
+}
+
+.proj-body {
+  padding-top: 30px;
+  white-space: normal;
+}
+
+@media screen and (max-width: 650px) {
+  .proj-body {
+    padding-top: 15px;
+  }
+}
+
+.proj-body > div {
+  float: left;
+  padding: 0 8%;
+  width: 84%;
+}
+
+.proj-name {
+  color: rgb(40, 40, 40);
+  font-size: xx-large;
+  font-weight: bolder;
+  padding-top: 15px;
+}
+
+.proj-sub {
+  color: rgba(40, 40, 40, .64);
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.proj-body hr {
+  width: 84%;
+}
+
+.proj-desc {
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+@media screen and (max-width: 400px) {
+  .proj-name {
+    font-weight: bold;
+    font-size: 18pt;
+  }
+  .proj-sub {
+    font-size: small;
+  }
+}
+
+.proj-footer {
+  bottom: 5px;
+  position: absolute;
+  width: 100%;
+}
+
+#github {
+  bottom: -2px;
+  left: -15px;
+  position: relative;
+  width: 40px;
+}
+
+.proj-footer > svg {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+
+/* ----------- End Index 2 ----------- */
+
+
+.home-footer-wrapper {
+  background-color: black;
+  color: #4f4f4f;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.triangle-col {
+  width: 100%;
+  height: 45px;
+  position:relative;
+  transform: rotate(180deg);
+}
+
+.triangle-background {
+  background-color: rgb(250, 250, 250);
+ top: 0;
+ left: 0;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.home-footer {
+  font-size: 12pt;
+  margin-top: 25px;
+}
+
+.home-footer a {
+  color:rgb(200, 200, 200);
+  text-decoration: none;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.home-footer a:hover {
+  filter: brightness(1.3);
+}
