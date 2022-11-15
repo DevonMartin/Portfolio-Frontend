@@ -13,6 +13,8 @@ import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 import Footer from "./components/Footer";
 
+
+
 function App() {
 
   return (

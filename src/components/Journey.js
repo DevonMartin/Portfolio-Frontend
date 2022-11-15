@@ -1,9 +1,25 @@
 import React, { useEffect } from "react";
 import "../css/Journey.css";
 import Header from "./Header";
-// import axios from 'axios';
+import axios from 'axios';
+
+const URL = process.env.REACT_APP_SERVER_URL;
 
 function Course(props) {
+
+  let x;
+
+
+  let getCourses = async (e) => {
+    axios.get(`${URL}/api/v1/coursework`).then(async (response) => {
+      x = await response.data;
+      console.log(x);
+    })
+  };
+
+  getCourses();
+
+  return "Hello World"
 
 }
 
@@ -12,6 +28,7 @@ function Journey() {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
+
   
   return (
     <div className="journey-wrapper">

@@ -5,6 +5,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Icon } from "@iconify/react";
 let key = "6Le-fO4iAAAAAJ-v9HPzt13vFLbv61LFYHLCuQZ3";
 
+const URL = process.env.REACT_APP_SERVER_URL;
+
 function SocialMedia(props) {
   return (
     <a href={props.link} target="_blank" rel="noreferrer">
@@ -48,7 +50,7 @@ function EmailForm(props) {
       token: token,
     };
     axios
-      .post("/api/v1/email", data)
+      .post(`${URL}/api/v1/email`, data)
       .then((response) => {
         setResponse(response.data);
         setSent(true);
