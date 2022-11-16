@@ -3,7 +3,8 @@ import "../css/Journey.css";
 import Header from "./Header";
 import axios from 'axios';
 
-const URL = process.env.REACT_APP_SERVER_URL;
+const URL =
+  process.env.REACT_APP_SERVER_URL || "https://devonmartin-api.onrender.com";
 
 function Course(props) {
 
