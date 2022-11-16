@@ -19,7 +19,7 @@
   max-width: min(80vw, 600px);
 }
 
-.courses-wrapper {
+.journey-courses-wrapper {
   align-items: start;
   background-color: rgb(178, 178, 178);
   border: 1px solid white;
@@ -31,7 +31,18 @@
   padding: 0 45px 85px;
 }
 
-.courses-wrapper h1 {
+.refresh-time {
+  color: black;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  text-align: end;
+}
+
+.refresh-time > span {
+  cursor: pointer;
+}
+
+.journey-courses-wrapper h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
   font-weight: 300;
@@ -90,7 +101,7 @@ font-weight: bold;
     max-width: 90vw;
   }
 
-  .courses-wrapper {
+  .journey-courses-wrapper {
     border-radius: 0;
     border-right: none;
     margin: 0 !important;
@@ -99,7 +110,7 @@ font-weight: bold;
     width: 100vw;
   }
 
-  .courses-wrapper h1 {
+  .journey-courses-wrapper h1 {
     font-size: 1.1rem;
     left: -26px;
     position: absolute;
