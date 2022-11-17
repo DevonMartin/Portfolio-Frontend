@@ -5,28 +5,6 @@ import axios from "axios";
 import { Icon } from "@iconify/react";
 import developing from "./Developing";
 
-function Lorem() {
-  return (
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-      voluptatum mollitia. Iste illo amet sed exercitationem pariatur, labore
-      tempora consequatur quaerat sunt. Aliquid blanditiis quo in. Possimus nemo
-      veritatis dolores obcaecati deserunt, quia laborum? Ducimus quam harum
-      aliquam eum tenetur fugiat commodi cupiditate ut, placeat rem, recusandae
-      nostrum rerum dolor qui, pariatur repellat officia mollitia molestias
-      perspiciatis ipsum soluta vero. Dolorum nihil ex laborum neque fugiat
-      ducimus perferendis illum mollitia, itaque a ipsa accusantium suscipit
-      blanditiis dolorem nobis ullam modi, facilis tenetur pariatur illo?
-      Placeat, nesciunt atque molestiae obcaecati hic sunt deserunt pariatur
-      voluptates. Assumenda enim explicabo non laudantium quae earum.
-      Repellendus laudantium unde tempore obcaecati numquam corrupti, laborum
-      amet. Aliquid obcaecati facere, totam eveniet nobis quae perferendis magni
-      natus consequatur quisquam a laborum excepturi explicabo voluptates,
-      tempora, provident deleniti praesentium!
-    </p>
-  );
-}
-
 const URL = developing
   ? process.env.REACT_APP_SERVER_URL
   : "https://devonmartin-api.onrender.com";
@@ -49,11 +27,15 @@ function Story() {
 
 function Courses() {
   let [refreshTime, setRefreshTime] = useState("Loading...");
-
+  let [finCourses, setFinCourses] = useState();
+  let [todoCourses, setTodoCourses] = useState();
+  let [inprogCourses, setInprogCourses] = useState();
+  
   let getCourses = async () => {
     axios.get(`${URL}/api/v1/coursework`).then((response) => {
       let data = response.data;
       setRefreshTime(new Date(data.refresh_time).toLocaleTimeString());
+      setCourses(data.courses);
     });
   };
   if (refreshTime === "Loading...") {
@@ -65,7 +47,27 @@ function Courses() {
     axios.get(`${URL}/api/v1/coursework/refresh`).then((response) => {
       let data = response.data;
       setRefreshTime(new Date(data.refresh_time).toLocaleTimeString());
+      setCourses(data.courses);
     });
+  };
+
+  let setCourses = (courses) => {
+    finCourses = [];
+    inprogCourses = [];
+    todoCourses = [];
+    courses.forEach((course) => {
+      console.log(course);
+      if (course.status === "fin") {
+        finCourses.push(course);
+      } else if (course.status === "in progress") {
+        inprogCourses.push(course);
+      } else {
+        todoCourses.push(course);
+      }
+    });
+    setFinCourses(finCourses);
+    setInprogCourses(inprogCourses);
+    setTodoCourses(todoCourses);
   };
 
   return (
@@ -81,13 +83,8 @@ function Courses() {
         <div className="course-bg"></div>
         <div className="course-fg green">
           <div className="course-wrapper">
-            <Course course="CS50X" />
-            <div className="course">
-              <div className="course-header">CS50X</div>
-              <div className="course-body">
-                birthdays credit dna fiftyville filter-more finance hello
-              </div>
-            </div>
+            {finCourses.length > 0 &&
+              finCourses.map((course) => <Course course={course} />)}
           </div>
         </div>
       </div>
@@ -95,8 +92,9 @@ function Courses() {
         <h1>Courses In Progress</h1>
         <div className="course-bg"></div>
         <div className="course-fg yellow">
-          <div className="course">
-            <Lorem />
+          <div className="course-wrapper">
+            {inprogCourses.length > 0 &&
+              inprogCourses.map((course) => <Course course={course} />)}
           </div>
         </div>
       </div>
@@ -104,8 +102,9 @@ function Courses() {
         <h1>Planned Courses</h1>
         <div className="course-bg"></div>
         <div className="course-fg red">
-          <div className="course">
-            <Lorem />
+          <div className="course-wrapper">
+            {todoCourses.length > 0 &&
+              todoCourses.map((course) => <Course course={course} />)}
           </div>
         </div>
       </div>
@@ -114,7 +113,16 @@ function Courses() {
 }
 
 function Course(props) {
-  return "Hello World";
+  let course = props.course;
+  return (
+    <div className="course" key={course.name}>
+      <div className="course-header">{course.name}</div>
+      <ul className="course-body">
+        {course.projects.length > 0 &&
+          course.projects.map((project) => <li>{project}</li>)}
+      </ul>
+    </div>
+  );
 }
 
 function Journey() {

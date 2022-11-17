@@ -79,9 +79,25 @@
   top: 115px;
 }
 
+.course-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .course {
   margin: 15px;
   max-width: 95%;
+  width: fit-content;
+}
+
+.course ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.course li {
+  margin: 0 5px;
 }
 
 .course-header {
