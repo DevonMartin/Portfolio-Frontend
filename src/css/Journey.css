@@ -1,3 +1,9 @@
+.main-journey-wrapper > img {
+  display: block;
+  margin: auto;
+  max-width: min(800px, 80vw);
+}
+
 .journey-wrapper {
   display: flex;
   flex-flow: row wrap;
@@ -10,11 +16,7 @@
   max-width: 800px;
 }
 
-.journey-wrapper > *:first-child {
-  flex: 100%;
-}
-
-.journey-wrapper > div:nth-child(2) {
+.journey-wrapper > div:first-child {
   flex: 30%;
   max-width: min(80vw, 600px);
 }
