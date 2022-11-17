@@ -3,6 +3,7 @@ import "../css/Journey.css";
 import Header from "./Header";
 import axios from "axios";
 import { Icon } from "@iconify/react";
+import developing from "./Developing";
 
 function Lorem() {
   return (
@@ -26,8 +27,9 @@ function Lorem() {
   );
 }
 
-const URL =
-  process.env.REACT_APP_SERVER_URL || "https://devonmartin-api.onrender.com";
+const URL = developing
+  ? process.env.REACT_APP_SERVER_URL
+  : "https://devonmartin-api.onrender.com";
 
 function Story() {
   useEffect(() => {

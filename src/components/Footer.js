@@ -4,7 +4,7 @@ import "../css/Footer.css";
 function Footer() {
   return (
     <div className="footer">
-      Designed and Developed by
+      <span className="non-mobile">Designed and Developed by</span>
       <span>Devon Martin</span>
       <span>&copy; 2022</span>
     </div>

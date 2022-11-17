@@ -3,10 +3,11 @@ import "../css/Contact.css";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Icon } from "@iconify/react";
-let key = "6Le-fO4iAAAAAJ-v9HPzt13vFLbv61LFYHLCuQZ3";
+import developing from "./Developing";
 
-const URL =
-  process.env.REACT_APP_SERVER_URL || "https://devonmartin-api.onrender.com";
+const URL = developing
+  ? process.env.REACT_APP_SERVER_URL
+  : "https://devonmartin-api.onrender.com";
 
 function SocialMedia(props) {
   return (
@@ -58,7 +59,7 @@ function EmailForm(props) {
       .then((response) => {
         setResponse(response.data);
         setEmailStatus(response.status === 200 ? "sent" : "failed");
-        console.log(response.status)
+        console.log(response.status);
         resetForm();
       })
       .catch((e) => {
@@ -122,6 +123,7 @@ function Contact() {
   });
 
   let reRef = useRef();
+  let key = "6Le-fO4iAAAAAJ-v9HPzt13vFLbv61LFYHLCuQZ3";
 
   return (
     <div className="contact-page-container">
