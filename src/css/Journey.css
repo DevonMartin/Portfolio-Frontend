@@ -110,6 +110,10 @@ font-weight: bold;
     width: 100vw;
   }
 
+  .refresh-time {
+    text-align: center;
+  }
+
   .journey-courses-wrapper h1 {
     font-size: 1.1rem;
     left: -26px;
@@ -162,5 +166,3 @@ font-weight: bold;
 .course-fg.red {
   background-color: #d46d6c;
 }
-
-/* 186, 123 149 */

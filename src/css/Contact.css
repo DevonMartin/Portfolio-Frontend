@@ -98,15 +98,33 @@
   width: fit-content;
 }
 
-.email-sent {
-  background-color: rgba(99, 210, 149, 0.797);
-  border: 1px solid green;
+.email-sending,
+.email-sent,
+.email-failed {
+  border: 1px solid;
+  color: black;
   border-radius: 5px;
-  color: rgb(40, 40, 40);
   font-size: 15pt;
+  max-width: 60%;
   padding: 5px 15px;
   position: relative;
   text-shadow: none;
+}
+
+.email-sending {
+  background-color: #fef49c;
+  border-color: rgb(140, 140, 1);
+}
+
+.email-sent {
+  background-color: #88c45e;
+  border-color: green;
+  animation: fadeout 3s 2s;
+}
+
+.email-failed {
+  background-color: #d46d6c;
+  border-color: red;
   animation: fadeout 3s 2s;
 }
 

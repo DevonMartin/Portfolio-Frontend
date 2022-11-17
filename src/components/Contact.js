@@ -22,7 +22,7 @@ function EmailForm(props) {
   let [phone, setPhone] = useState("");
   let [company, setCompany] = useState("");
   let [message, setMessage] = useState("");
-  let [sent, setSent] = useState(false);
+  let [emailStatus, setEmailStatus] = useState(false);
   let [response, setResponse] = useState("");
 
   let resetForm = () => {
@@ -32,12 +32,15 @@ function EmailForm(props) {
     setCompany("");
     setMessage("");
     setTimeout(() => {
-      setSent(false);
+      setEmailStatus(null);
     }, 4800);
   };
 
   let handleSubmit = async (e) => {
     e.preventDefault();
+
+    setResponse("Sending...");
+    setEmailStatus("sending");
 
     const token = await props.reRef.current.executeAsync();
     props.reRef.current.reset();
@@ -54,7 +57,8 @@ function EmailForm(props) {
       .post(`${URL}/api/v1/email`, data)
       .then((response) => {
         setResponse(response.data);
-        setSent(true);
+        setEmailStatus(response.status === 200 ? "sent" : "failed");
+        console.log(response.status)
         resetForm();
       })
       .catch((e) => {
@@ -104,17 +108,18 @@ function EmailForm(props) {
         ></textarea>
         <br />
         <button type="submit">Send</button>
-        <div className={`${sent ? "email-sent" : "hidden"}`}>{response}</div>
+        <div className={emailStatus ? "email-" + emailStatus : "hidden"}>
+          {response}
+        </div>
       </form>
     </div>
   );
 }
 
 function Contact() {
-
   useEffect(() => {
     window.scrollTo(0, 0);
-  })
+  });
 
   let reRef = useRef();
 
