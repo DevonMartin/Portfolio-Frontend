@@ -1,32 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../css/Journey.css";
-import journeyPic from '../assets/journey.jpg';
+import journeyPic from "../assets/journey.jpg";
 import Header from "./Header";
 import axios from "axios";
 import { Icon } from "@iconify/react";
 import developing from "./Developing";
-
-function Lorem() {
-  return (
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-      voluptatum mollitia. Iste illo amet sed exercitationem pariatur, labore
-      tempora consequatur quaerat sunt. Aliquid blanditiis quo in. Possimus nemo
-      veritatis dolores obcaecati deserunt, quia laborum? Ducimus quam harum
-      aliquam eum tenetur fugiat commodi cupiditate ut, placeat rem, recusandae
-      nostrum rerum dolor qui, pariatur repellat officia mollitia molestias
-      perspiciatis ipsum soluta vero. Dolorum nihil ex laborum neque fugiat
-      ducimus perferendis illum mollitia, itaque a ipsa accusantium suscipit
-      blanditiis dolorem nobis ullam modi, facilis tenetur pariatur illo?
-      Placeat, nesciunt atque molestiae obcaecati hic sunt deserunt pariatur
-      voluptates. Assumenda enim explicabo non laudantium quae earum.
-      Repellendus laudantium unde tempore obcaecati numquam corrupti, laborum
-      amet. Aliquid obcaecati facere, totam eveniet nobis quae perferendis magni
-      natus consequatur quisquam a laborum excepturi explicabo voluptates,
-      tempora, provident deleniti praesentium!
-    </p>
-  );
-}
 
 const URL = developing
   ? process.env.REACT_APP_SERVER_URL
@@ -50,14 +28,16 @@ function Story() {
         <p>
           Being self-taught, I've had the benefit of being able to pause my
           coursework to apply new knowledge to practical projects. That has been
-          my basis for learning and growing. In February of 2021, I start with
-          CS50x, offered for free online by Harvard University. By the time I
-          was four weeks in, I was itching to begin building from my own design.
-          So I did: I began working on the earliest version of RuneScape in C.
-          Over the next six weeks, I continued to build it on the side while
-          completing the course. I then dedicated time exclusively to RuneScape
-          in C and used the finished piece as my submission for CS50x's final
-          project.
+          my basis for learning and growing. In February of 2021, I discover a
+          program to learn how to make iOS apps. I quickly realize that I am not
+          learning the fundamentals that I need to really succeed. By May, I
+          switch to CS50x, offered for free online by Harvard University. By the
+          time I was four weeks in, I was itching to begin building from my own
+          design. So I did: I began working on the earliest version of RuneScape
+          in C. Over the next six weeks, I continued to build it on the side
+          while completing the course. I then dedicated time exclusively to
+          RuneScape in C and used the finished piece as my submission for
+          CS50x's final project.
         </p>
         <p>
           Not being bogged down by harsh deadlines, I was able to really dive
@@ -74,7 +54,9 @@ function Story() {
           The tables on this page contain a record of the coursework I have
           dedicated myself to completing, some already done and some not. The
           titles of each course link to their respective GitHub page where you
-          can verify my work and consistency yourself. All of my work is dynamically pulled from GitHub, so click the refresh button to check for any updates!
+          can verify my work and consistency yourself. All of my work is
+          dynamically pulled from GitHub, so click the refresh button to check
+          for any updates!
         </p>
       </div>
     </div>
