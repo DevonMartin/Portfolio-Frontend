@@ -2,13 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../css/Journey.css";
 import journeyPic from "../assets/journey.jpg";
 import Header from "./Header";
-import axios from "axios";
 import { Icon } from "@iconify/react";
-import developing from "./Developing";
-
-const URL = developing
-  ? process.env.REACT_APP_SERVER_URL
-  : "https://devonmartin-api.onrender.com";
+import MyAPI from "./MyAPI";
 
 function Story() {
   useEffect(() => {
@@ -70,11 +65,10 @@ function Courses() {
   let [inprogCourses, setInprogCourses] = useState();
 
   let getCourses = async () => {
-    axios.get(`${URL}/api/v1/coursework`).then((response) => {
-      let data = response.data;
-      setRefreshTime(new Date(data.refresh_time).toLocaleTimeString());
-      setCourses(data.courses);
-    });
+    let response = await MyAPI.get("/api/v1/coursework");
+    let data = response.data;
+    setRefreshTime(new Date(data.refresh_time).toLocaleTimeString());
+    setCourses(data.courses);
   };
   if (refreshTime === "Loading...") {
     getCourses();
@@ -82,11 +76,10 @@ function Courses() {
 
   let refreshCourses = async () => {
     setRefreshTime("Refreshing...");
-    axios.get(`${URL}/api/v1/coursework/refresh`).then((response) => {
-      let data = response.data;
-      setRefreshTime(new Date(data.refresh_time).toLocaleTimeString());
-      setCourses(data.courses);
-    });
+    let response = await MyAPI.get("/api/v1/coursework/refresh");
+    let data = response.data;
+    setRefreshTime(new Date(data.refresh_time).toLocaleTimeString());
+    setCourses(data.courses);
   };
 
   let setCourses = (courses) => {

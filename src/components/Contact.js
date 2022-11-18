@@ -1,13 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../css/Contact.css";
-import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Icon } from "@iconify/react";
-import developing from "./Developing";
-
-const URL = developing
-  ? process.env.REACT_APP_SERVER_URL
-  : "https://devonmartin-api.onrender.com";
+import MyAPI from "./MyAPI";
 
 function SocialMedia(props) {
   return (
@@ -54,17 +49,12 @@ function EmailForm(props) {
       message: message,
       token: token,
     };
-    axios
-      .post(`${URL}/api/v1/email`, data)
-      .then((response) => {
-        setResponse(response.data);
-        setEmailStatus(response.status === 200 ? "sent" : "failed");
-        console.log(response.status);
-        resetForm();
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    let response = await MyAPI.post("/api/v1/email", data).catch((err) =>
+      console.log(err)
+    );
+    setResponse(response.data);
+    setEmailStatus(response.status === 200 ? "sent" : "failed");
+    resetForm();
   };
 
   return (
