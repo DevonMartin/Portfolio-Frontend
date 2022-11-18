@@ -187,6 +187,9 @@ function Index2() {
       <div id="dark" onClick={closeDark}></div>
       <ProjectPopup openProject={openProject} />
       <Header string="noteworthy projects" />
+      <div className="mobile-only text-center">
+        <i>Tap a picture below for more info!</i>
+      </div>
       <div className="gallery">
         <ProjectInfo id="RS" setOpenProject={setOpenProject} />
         <ProjectInfo id="GL" setOpenProject={setOpenProject} />
